@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  PlugViewController.h
 //  English
 //
 //  Created by Evans on 15/9/8.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface PlugViewController : UIViewController
 
 @end
-
