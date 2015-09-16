@@ -12,6 +12,7 @@
 		0109F9111BA3415900D39893 /* SDRefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0109F90A1BA3415900D39893 /* SDRefreshHeaderView.m */; settings = {ASSET_TAGS = (); }; };
 		0109F9121BA3415900D39893 /* SDRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0109F90C1BA3415900D39893 /* SDRefreshView.m */; settings = {ASSET_TAGS = (); }; };
 		0109F9131BA3415900D39893 /* UIView+SDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0109F90E1BA3415900D39893 /* UIView+SDExtension.m */; settings = {ASSET_TAGS = (); }; };
+		01376F811BA7CD2E006EE2EC /* BCNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 01376F801BA7CD2E006EE2EC /* BCNetwork.m */; settings = {ASSET_TAGS = (); }; };
 		017719A31BA1CA150066EB27 /* HomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 017719A21BA1CA150066EB27 /* HomeController.m */; settings = {ASSET_TAGS = (); }; };
 		017719A81BA1CA920066EB27 /* RequestData.m in Sources */ = {isa = PBXBuildFile; fileRef = 017719A71BA1CA920066EB27 /* RequestData.m */; settings = {ASSET_TAGS = (); }; };
 		0179BD821B9E9F9D008E13E3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0179BD811B9E9F9D008E13E3 /* main.m */; };
@@ -60,6 +61,8 @@
 		0109F90C1BA3415900D39893 /* SDRefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDRefreshView.m; sourceTree = "<group>"; };
 		0109F90D1BA3415900D39893 /* UIView+SDExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SDExtension.h"; sourceTree = "<group>"; };
 		0109F90E1BA3415900D39893 /* UIView+SDExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SDExtension.m"; sourceTree = "<group>"; };
+		01376F7F1BA7CD2E006EE2EC /* BCNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCNetwork.h; sourceTree = "<group>"; };
+		01376F801BA7CD2E006EE2EC /* BCNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCNetwork.m; sourceTree = "<group>"; };
 		017719A11BA1CA150066EB27 /* HomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeController.h; sourceTree = "<group>"; };
 		017719A21BA1CA150066EB27 /* HomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeController.m; sourceTree = "<group>"; };
 		017719A61BA1CA920066EB27 /* RequestData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestData.h; sourceTree = "<group>"; };
@@ -164,6 +167,8 @@
 			children = (
 				017719A61BA1CA920066EB27 /* RequestData.h */,
 				017719A71BA1CA920066EB27 /* RequestData.m */,
+				01376F7F1BA7CD2E006EE2EC /* BCNetwork.h */,
+				01376F801BA7CD2E006EE2EC /* BCNetwork.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -518,6 +523,7 @@
 				0179BD821B9E9F9D008E13E3 /* main.m in Sources */,
 				01EBDBDC1BA2AF03007B581B /* LibraryViewCell.m in Sources */,
 				01EBDBEC1BA2BD7B007B581B /* YiRefreshHeader.m in Sources */,
+				01376F811BA7CD2E006EE2EC /* BCNetwork.m in Sources */,
 				0109F9131BA3415900D39893 /* UIView+SDExtension.m in Sources */,
 				0109F9111BA3415900D39893 /* SDRefreshHeaderView.m in Sources */,
 				017719A81BA1CA920066EB27 /* RequestData.m in Sources */,
@@ -646,12 +652,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
-				CODE_SIGN_IDENTITY = "iPhone Developer: WeiXie Xu (E8RSTBASWM)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = English/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.winainfo.English;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c3bcb87e-3d93-46dc-a5a3-3a3f5848c234";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -661,11 +669,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = English/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.winainfo.English;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c3bcb87e-3d93-46dc-a5a3-3a3f5848c234";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

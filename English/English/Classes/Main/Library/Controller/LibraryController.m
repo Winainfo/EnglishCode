@@ -9,19 +9,24 @@
 #import "LibraryController.h"
 #import <UIImageView+WebCache.h>
 #import "SDRefresh.h"
-@interface LibraryController (){
-   int page;
-}
+#import "BCNetwork.h"
+@interface LibraryController ()
 @property (nonatomic,retain)NSArray *bookArray;
 @property (nonatomic, weak) SDRefreshFooterView *refreshFooter;
 @property (nonatomic, weak) SDRefreshHeaderView *refreshHeader;
+//@property (nonatomic,assign) int page;
 @end
 
+static int page=6;
 @implementation LibraryController
-
+-(void)viewWillAppear:(BOOL)animated{
+    //下拉刷新
+    [self pullRefresh];
+    //上拉加载
+    [self setupFooter];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
-    page=2;
     //设置标题
     self.title=@"图书馆";
     //设置导航栏标题颜色和字体大小UITextAttributeFont:[UIFont fontWithName:@"Heiti TC" size:0.0]
@@ -29,31 +34,19 @@
     //注册
     [self.collectionView registerClass:[LibraryViewCell class] forCellWithReuseIdentifier:@"LibraryViewCell"];
     [self getData];
-    //下拉刷新
-    [self pullRefresh];
-    //上拉加载
-    [self setupFooter];
 }
 
 //下拉刷新
 -(void)pullRefresh{
     SDRefreshHeaderView *refreshHeader = [SDRefreshHeaderView refreshView];
-    
     // 默认是在navigationController环境下，如果不是在此环境下，请设置 refreshHeader.isEffectedByNavigationController = NO;
     [refreshHeader addToScrollView:self.collectionView];
-//    if(page!=1){
-//        page--;
-//    }
-//    if(page==1){
-//        page=1;
-//    }
-    page--;
-    NSString *pageIndex=[NSString stringWithFormat:@"%i",page];
+   // NSString *pageIndex=[NSString stringWithFormat:@"%i",page];
     __weak SDRefreshHeaderView *weakRefreshHeader = refreshHeader;
     refreshHeader.beginRefreshingOperation = ^{
         //调用评论接口
-        NSDictionary *param=[NSDictionary dictionaryWithObjectsAndKeys:@"6",@"pageSize",pageIndex,@"pageIndex",@"1",@"book_team", nil];
-        [RequestData getIndexBook:param FinishCallbackBlock:^(NSDictionary *data) {
+        NSDictionary *param=[NSDictionary dictionaryWithObjectsAndKeys:@"6",@"pageSize",@"1",@"pageIndex",@"1",@"book_team", nil];
+        [RequestData getLibraryBook:param FinishCallbackBlock:^(NSDictionary *data) {
             self.bookArray=data[@"content"];
             //调用主线程
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -75,25 +68,24 @@
 }
 //上拉加载
 -(void)pushRefresh{
+    page=page+6;
     NSString *pageIndex=[NSString stringWithFormat:@"%i",page];
     //调用评论接口
-    NSDictionary *param=[NSDictionary dictionaryWithObjectsAndKeys:@"6",@"pageSize",pageIndex,@"pageIndex",@"1",@"book_team", nil];
-    [RequestData getIndexBook:param FinishCallbackBlock:^(NSDictionary *data) {
+    NSDictionary *param=[NSDictionary dictionaryWithObjectsAndKeys:pageIndex,@"pageSize",@"1",@"pageIndex",@"1",@"book_team", nil];
+    [RequestData getLibraryBook:param FinishCallbackBlock:^(NSDictionary *data) {
         self.bookArray=data[@"content"];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)),   dispatch_get_main_queue(), ^{
             [self.collectionView reloadData];
             [self.refreshFooter endRefreshing];
             });
     }];
-    page++;
-
 }
 
 //请求数据
 -(void)getData{
     //调用评论接口
     NSDictionary *param=[NSDictionary dictionaryWithObjectsAndKeys:@"6",@"pageSize",@"1",@"pageIndex",@"1",@"book_team", nil];
-    [RequestData getIndexBook:param FinishCallbackBlock:^(NSDictionary *data) {
+    [RequestData getLibraryBook:param FinishCallbackBlock:^(NSDictionary *data) {
         self.bookArray=data[@"content"];
         //调用主线程
         dispatch_async(dispatch_get_main_queue(), ^{
