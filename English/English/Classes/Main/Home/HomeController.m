@@ -18,6 +18,15 @@
 
 @implementation HomeController
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    //加载数据
+    [self getBookImage];
+    
+}
+-(void)viewWillDisappear:(BOOL)animated{
+    [self getData];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -25,35 +34,22 @@
     self.title=@"首页";
     //设置导航栏标题颜色和字体大小UITextAttributeFont:[UIFont fontWithName:@"Heiti TC" size:0.0]
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont fontWithName:@"Heiti Sc" size:16.0],NSForegroundColorAttributeName:[UIColor whiteColor]}];
-    [self getBookImage];
-    
-//    BCNetwork *net=[BCNetwork alloc];
-//    //调用评论接口
-//    NSDictionary *param=[NSDictionary dictionaryWithObjectsAndKeys:@"1",@"pageSize",@"1",@"pageIndex",@"1",@"book_team", nil];
-//    [net getCacheWithUrl:@"http://42.62.50.218:8875/server/query_book_list" option:BcRequestCenterCachePolicyCacheAndLocal parameters:param sucess:^(id json) {
-//        
-//        //NSLog(@"----成功");
-//        [self.bookImage sd_setImageWithURL:json[@"content"][0][@"result"][@"book_img_url"]];
-//    } failur:^(NSError *error) {
-//      //  NSLog(@"-----失败");
-//    }];
 }
+/**
+ *  请求首页的数据
+ */
 -(void)getBookImage{
-    //调用评论接口
     NSDictionary *param=[NSDictionary dictionaryWithObjectsAndKeys:@"1",@"pageSize",@"1",@"pageIndex",@"1",@"book_team", nil];
     [RequestData getIndexBook:param FinishCallbackBlock:^(NSDictionary *data) {
-        //NSLog(@"%@",data[@"content"][0][@"result"][@"book_img_url"]);
         [self.bookImage sd_setImageWithURL:data[@"content"][0][@"result"][@"book_img_url"]];
     }];
 }
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+/**
+ *  请求图书列表页的数据
+ */
+-(void)getData{
+    NSDictionary *param=[NSDictionary dictionaryWithObjectsAndKeys:@"6",@"pageSize",@"1",@"pageIndex",@"1",@"book_team", nil];
+    [RequestData getLibraryBook:param FinishCallbackBlock:^(NSDictionary *data) {
+    }];
 }
-*/
-
 @end

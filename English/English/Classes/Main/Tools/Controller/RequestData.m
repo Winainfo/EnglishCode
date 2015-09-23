@@ -67,6 +67,7 @@
         //NSLog(@"没有缓存---");
         //3.发生请求
         [mgr GET:@"http://42.62.50.218:8875/server/query_book_list" parameters:params success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+            NSLog(@"数据：%@",responseObject);
             [[EGOCache globalCache]setObject:responseObject forKey:forkey withTimeoutInterval:24*60*60];
             block(responseObject);
         } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
@@ -75,5 +76,37 @@
     }
 }
 
-
+/**
+ *  获取图书详细页
+ *
+ *  @param data  <#data description#>
+ *  @param block <#block description#>
+ */
++(void)getDetailBook:(NSDictionary *)data FinishCallbackBlock:(void (^)(NSDictionary *))block{
+    //1.请求管理者
+    AFHTTPRequestOperationManager *mgr=[AFHTTPRequestOperationManager manager];
+    mgr.responseSerializer=[AFJSONResponseSerializer serializer];
+    //2.拼接请求参数
+    NSMutableDictionary *params=[NSMutableDictionary dictionary];
+    params[@"book_id"]=[data objectForKey:@"book_id"];
+    params[@"pagenumber"]=[data objectForKey:@"pagenumber"];
+    NSString *Key=[NSString stringWithFormat:@"%@%@",[data objectForKey:@"book_id"],[data objectForKey:@"pagenumber"]];
+    NSLog(@"----%@",Key);
+    NSString *forkey= [NSString stringWithFormat:@"DetailBook%@",Key];
+    NSLog(@"------%@",forkey);
+    EGOCache *cache=[EGOCache new];
+    if([cache hasCacheForKey:forkey])
+    {
+        NSDictionary *book=(NSDictionary *)[[EGOCache globalCache]objectForKey:forkey];
+        block(book);
+    }else {
+        //3.发生请求
+        [mgr GET:@"http://42.62.50.218:8875/server/query_book_info" parameters:params success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+            [[EGOCache globalCache]setObject:responseObject forKey:forkey withTimeoutInterval:24*60*60];
+            block(responseObject);
+        } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
+            NSLog(@"请求失败-%@",error);
+        }];
+    }
+}
 @end

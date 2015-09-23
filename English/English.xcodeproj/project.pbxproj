@@ -12,6 +12,17 @@
 		0109F9111BA3415900D39893 /* SDRefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0109F90A1BA3415900D39893 /* SDRefreshHeaderView.m */; settings = {ASSET_TAGS = (); }; };
 		0109F9121BA3415900D39893 /* SDRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0109F90C1BA3415900D39893 /* SDRefreshView.m */; settings = {ASSET_TAGS = (); }; };
 		0109F9131BA3415900D39893 /* UIView+SDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0109F90E1BA3415900D39893 /* UIView+SDExtension.m */; settings = {ASSET_TAGS = (); }; };
+		01272DF51BB281E600EFE68B /* D3RecordButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 01272DE61BB281E600EFE68B /* D3RecordButton.m */; settings = {ASSET_TAGS = (); }; };
+		01272DF61BB281E600EFE68B /* mic_0.png in Resources */ = {isa = PBXBuildFile; fileRef = 01272DE81BB281E600EFE68B /* mic_0.png */; settings = {ASSET_TAGS = (); }; };
+		01272DF71BB281E600EFE68B /* mic_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 01272DE91BB281E600EFE68B /* mic_1.png */; settings = {ASSET_TAGS = (); }; };
+		01272DF81BB281E600EFE68B /* mic_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 01272DEA1BB281E600EFE68B /* mic_2.png */; settings = {ASSET_TAGS = (); }; };
+		01272DF91BB281E600EFE68B /* mic_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 01272DEB1BB281E600EFE68B /* mic_3.png */; settings = {ASSET_TAGS = (); }; };
+		01272DFA1BB281E600EFE68B /* mic_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 01272DEC1BB281E600EFE68B /* mic_4.png */; settings = {ASSET_TAGS = (); }; };
+		01272DFB1BB281E600EFE68B /* mic_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 01272DED1BB281E600EFE68B /* mic_5.png */; settings = {ASSET_TAGS = (); }; };
+		01272DFC1BB281E600EFE68B /* mic_cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = 01272DEE1BB281E600EFE68B /* mic_cancel.png */; settings = {ASSET_TAGS = (); }; };
+		01272DFD1BB281E600EFE68B /* libmp3lame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01272DF01BB281E600EFE68B /* libmp3lame.a */; settings = {ASSET_TAGS = (); }; };
+		01272DFE1BB281E600EFE68B /* Mp3Recorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 01272DF21BB281E600EFE68B /* Mp3Recorder.m */; settings = {ASSET_TAGS = (); }; };
+		01272DFF1BB281E600EFE68B /* RecordHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 01272DF41BB281E600EFE68B /* RecordHUD.m */; settings = {ASSET_TAGS = (); }; };
 		01376F811BA7CD2E006EE2EC /* BCNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 01376F801BA7CD2E006EE2EC /* BCNetwork.m */; settings = {ASSET_TAGS = (); }; };
 		017719A31BA1CA150066EB27 /* HomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 017719A21BA1CA150066EB27 /* HomeController.m */; settings = {ASSET_TAGS = (); }; };
 		017719A81BA1CA920066EB27 /* RequestData.m in Sources */ = {isa = PBXBuildFile; fileRef = 017719A71BA1CA920066EB27 /* RequestData.m */; settings = {ASSET_TAGS = (); }; };
@@ -22,6 +33,7 @@
 		0179BDA61B9E9F9D008E13E3 /* EnglishUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0179BDA51B9E9F9D008E13E3 /* EnglishUITests.m */; };
 		0179BDEB1B9EE7C1008E13E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0179BDEA1B9EE7C1008E13E3 /* Main.storyboard */; };
 		0179BDEE1B9EE846008E13E3 /* PlugViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0179BDED1B9EE846008E13E3 /* PlugViewController.m */; };
+		01B191971BB27A6900EDBF7F /* AudioStreamer.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B191961BB27A6900EDBF7F /* AudioStreamer.m */; settings = {ASSET_TAGS = (); }; };
 		01EBDBD81BA2A29F007B581B /* LibraryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01EBDBD71BA2A29F007B581B /* LibraryController.m */; settings = {ASSET_TAGS = (); }; };
 		01EBDBDC1BA2AF03007B581B /* LibraryViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01EBDBDA1BA2AF03007B581B /* LibraryViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		01EBDBDD1BA2AF03007B581B /* LibraryViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01EBDBDB1BA2AF03007B581B /* LibraryViewCell.xib */; settings = {ASSET_TAGS = (); }; };
@@ -30,6 +42,7 @@
 		01EBDBEA1BA2BD7B007B581B /* down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01EBDBE51BA2BD7B007B581B /* down@2x.png */; settings = {ASSET_TAGS = (); }; };
 		01EBDBEB1BA2BD7B007B581B /* YiRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 01EBDBE71BA2BD7B007B581B /* YiRefreshFooter.m */; settings = {ASSET_TAGS = (); }; };
 		01EBDBEC1BA2BD7B007B581B /* YiRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 01EBDBE91BA2BD7B007B581B /* YiRefreshHeader.m */; settings = {ASSET_TAGS = (); }; };
+		01F840451BB129BE003DF839 /* DetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F840441BB129BE003DF839 /* DetailController.m */; settings = {ASSET_TAGS = (); }; };
 		104C4978A9199A83EF5EF985 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50F596C1487F28CA8B8F90BA /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +74,21 @@
 		0109F90C1BA3415900D39893 /* SDRefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDRefreshView.m; sourceTree = "<group>"; };
 		0109F90D1BA3415900D39893 /* UIView+SDExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SDExtension.h"; sourceTree = "<group>"; };
 		0109F90E1BA3415900D39893 /* UIView+SDExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SDExtension.m"; sourceTree = "<group>"; };
+		01272DE51BB281E600EFE68B /* D3RecordButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3RecordButton.h; sourceTree = "<group>"; };
+		01272DE61BB281E600EFE68B /* D3RecordButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3RecordButton.m; sourceTree = "<group>"; };
+		01272DE81BB281E600EFE68B /* mic_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mic_0.png; sourceTree = "<group>"; };
+		01272DE91BB281E600EFE68B /* mic_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mic_1.png; sourceTree = "<group>"; };
+		01272DEA1BB281E600EFE68B /* mic_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mic_2.png; sourceTree = "<group>"; };
+		01272DEB1BB281E600EFE68B /* mic_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mic_3.png; sourceTree = "<group>"; };
+		01272DEC1BB281E600EFE68B /* mic_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mic_4.png; sourceTree = "<group>"; };
+		01272DED1BB281E600EFE68B /* mic_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mic_5.png; sourceTree = "<group>"; };
+		01272DEE1BB281E600EFE68B /* mic_cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mic_cancel.png; sourceTree = "<group>"; };
+		01272DEF1BB281E600EFE68B /* lame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lame.h; sourceTree = "<group>"; };
+		01272DF01BB281E600EFE68B /* libmp3lame.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmp3lame.a; sourceTree = "<group>"; };
+		01272DF11BB281E600EFE68B /* Mp3Recorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mp3Recorder.h; sourceTree = "<group>"; };
+		01272DF21BB281E600EFE68B /* Mp3Recorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mp3Recorder.m; sourceTree = "<group>"; };
+		01272DF31BB281E600EFE68B /* RecordHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordHUD.h; sourceTree = "<group>"; };
+		01272DF41BB281E600EFE68B /* RecordHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordHUD.m; sourceTree = "<group>"; };
 		01376F7F1BA7CD2E006EE2EC /* BCNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCNetwork.h; sourceTree = "<group>"; };
 		01376F801BA7CD2E006EE2EC /* BCNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCNetwork.m; sourceTree = "<group>"; };
 		017719A11BA1CA150066EB27 /* HomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeController.h; sourceTree = "<group>"; };
@@ -82,6 +110,8 @@
 		0179BDEA1B9EE7C1008E13E3 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		0179BDEC1B9EE846008E13E3 /* PlugViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlugViewController.h; sourceTree = "<group>"; };
 		0179BDED1B9EE846008E13E3 /* PlugViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlugViewController.m; sourceTree = "<group>"; };
+		01B191951BB27A6900EDBF7F /* AudioStreamer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioStreamer.h; sourceTree = "<group>"; };
+		01B191961BB27A6900EDBF7F /* AudioStreamer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioStreamer.m; sourceTree = "<group>"; };
 		01EBDBD61BA2A29F007B581B /* LibraryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibraryController.h; sourceTree = "<group>"; };
 		01EBDBD71BA2A29F007B581B /* LibraryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LibraryController.m; sourceTree = "<group>"; };
 		01EBDBD91BA2AF03007B581B /* LibraryViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibraryViewCell.h; sourceTree = "<group>"; };
@@ -95,6 +125,8 @@
 		01EBDBE71BA2BD7B007B581B /* YiRefreshFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YiRefreshFooter.m; sourceTree = "<group>"; };
 		01EBDBE81BA2BD7B007B581B /* YiRefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YiRefreshHeader.h; sourceTree = "<group>"; };
 		01EBDBE91BA2BD7B007B581B /* YiRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YiRefreshHeader.m; sourceTree = "<group>"; };
+		01F840431BB129BE003DF839 /* DetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailController.h; sourceTree = "<group>"; };
+		01F840441BB129BE003DF839 /* DetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailController.m; sourceTree = "<group>"; };
 		2D69A48AFE978ED04C27F315 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		50F596C1487F28CA8B8F90BA /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF20CAB821BD57FD7FEAE4AC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -106,6 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				104C4978A9199A83EF5EF985 /* libPods.a in Frameworks */,
+				01272DFD1BB281E600EFE68B /* libmp3lame.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +176,36 @@
 			path = Refresh;
 			sourceTree = "<group>";
 		};
+		01272DE41BB281E600EFE68B /* D3RecordBtutton */ = {
+			isa = PBXGroup;
+			children = (
+				01272DE51BB281E600EFE68B /* D3RecordButton.h */,
+				01272DE61BB281E600EFE68B /* D3RecordButton.m */,
+				01272DE71BB281E600EFE68B /* imgs */,
+				01272DEF1BB281E600EFE68B /* lame.h */,
+				01272DF01BB281E600EFE68B /* libmp3lame.a */,
+				01272DF11BB281E600EFE68B /* Mp3Recorder.h */,
+				01272DF21BB281E600EFE68B /* Mp3Recorder.m */,
+				01272DF31BB281E600EFE68B /* RecordHUD.h */,
+				01272DF41BB281E600EFE68B /* RecordHUD.m */,
+			);
+			path = D3RecordBtutton;
+			sourceTree = "<group>";
+		};
+		01272DE71BB281E600EFE68B /* imgs */ = {
+			isa = PBXGroup;
+			children = (
+				01272DE81BB281E600EFE68B /* mic_0.png */,
+				01272DE91BB281E600EFE68B /* mic_1.png */,
+				01272DEA1BB281E600EFE68B /* mic_2.png */,
+				01272DEB1BB281E600EFE68B /* mic_3.png */,
+				01272DEC1BB281E600EFE68B /* mic_4.png */,
+				01272DED1BB281E600EFE68B /* mic_5.png */,
+				01272DEE1BB281E600EFE68B /* mic_cancel.png */,
+			);
+			path = imgs;
+			sourceTree = "<group>";
+		};
 		017719A01BA1C9EF0066EB27 /* Home(首页) */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +228,8 @@
 		017719A51BA1CA500066EB27 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				01B191951BB27A6900EDBF7F /* AudioStreamer.h */,
+				01B191961BB27A6900EDBF7F /* AudioStreamer.m */,
 				017719A61BA1CA920066EB27 /* RequestData.h */,
 				017719A71BA1CA920066EB27 /* RequestData.m */,
 				01376F7F1BA7CD2E006EE2EC /* BCNetwork.h */,
@@ -247,6 +312,7 @@
 		0179BDDC1B9EE6C0008E13E3 /* Plug-in(插件) */ = {
 			isa = PBXGroup;
 			children = (
+				01272DE41BB281E600EFE68B /* D3RecordBtutton */,
 				0109F9041BA3413900D39893 /* Refresh */,
 				01EBDBE41BA2BD7B007B581B /* YiRefresh */,
 				01EBDBE01BA2B229007B581B /* ARLabel */,
@@ -292,6 +358,8 @@
 			children = (
 				01EBDBD61BA2A29F007B581B /* LibraryController.h */,
 				01EBDBD71BA2A29F007B581B /* LibraryController.m */,
+				01F840431BB129BE003DF839 /* DetailController.h */,
+				01F840441BB129BE003DF839 /* DetailController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -454,10 +522,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				01EBDBDD1BA2AF03007B581B /* LibraryViewCell.xib in Resources */,
+				01272DF91BB281E600EFE68B /* mic_3.png in Resources */,
 				0179BDEB1B9EE7C1008E13E3 /* Main.storyboard in Resources */,
+				01272DF81BB281E600EFE68B /* mic_2.png in Resources */,
+				01272DF61BB281E600EFE68B /* mic_0.png in Resources */,
+				01272DFC1BB281E600EFE68B /* mic_cancel.png in Resources */,
+				01272DFB1BB281E600EFE68B /* mic_5.png in Resources */,
 				01EBDBEA1BA2BD7B007B581B /* down@2x.png in Resources */,
 				0109F90F1BA3415900D39893 /* sdRefeshView_arrow@2x.png in Resources */,
+				01272DF71BB281E600EFE68B /* mic_1.png in Resources */,
 				01EBDBDF1BA2B1F5007B581B /* 222.png in Resources */,
+				01272DFA1BB281E600EFE68B /* mic_4.png in Resources */,
 				0179BD8D1B9E9F9D008E13E3 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -519,7 +594,9 @@
 				0179BD851B9E9F9D008E13E3 /* AppDelegate.m in Sources */,
 				0109F9101BA3415900D39893 /* SDRefreshFooterView.m in Sources */,
 				0109F9121BA3415900D39893 /* SDRefreshView.m in Sources */,
+				01B191971BB27A6900EDBF7F /* AudioStreamer.m in Sources */,
 				0179BDEE1B9EE846008E13E3 /* PlugViewController.m in Sources */,
+				01F840451BB129BE003DF839 /* DetailController.m in Sources */,
 				0179BD821B9E9F9D008E13E3 /* main.m in Sources */,
 				01EBDBDC1BA2AF03007B581B /* LibraryViewCell.m in Sources */,
 				01EBDBEC1BA2BD7B007B581B /* YiRefreshHeader.m in Sources */,
@@ -527,9 +604,12 @@
 				0109F9131BA3415900D39893 /* UIView+SDExtension.m in Sources */,
 				0109F9111BA3415900D39893 /* SDRefreshHeaderView.m in Sources */,
 				017719A81BA1CA920066EB27 /* RequestData.m in Sources */,
+				01272DF51BB281E600EFE68B /* D3RecordButton.m in Sources */,
+				01272DFE1BB281E600EFE68B /* Mp3Recorder.m in Sources */,
 				017719A31BA1CA150066EB27 /* HomeController.m in Sources */,
 				01EBDBD81BA2A29F007B581B /* LibraryController.m in Sources */,
 				01EBDBE31BA2B229007B581B /* ARLabel.m in Sources */,
+				01272DFF1BB281E600EFE68B /* RecordHUD.m in Sources */,
 				01EBDBEB1BA2BD7B007B581B /* YiRefreshFooter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -657,6 +737,10 @@
 				INFOPLIST_FILE = English/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/English/Classes/Plug-in/D3RecordBtutton",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.winainfo.English;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -673,6 +757,10 @@
 				INFOPLIST_FILE = English/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/English/Classes/Plug-in/D3RecordBtutton",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.winainfo.English;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

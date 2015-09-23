@@ -7,10 +7,11 @@
 //
 
 #import "LibraryController.h"
+#import "DetailController.h"
 #import <UIImageView+WebCache.h>
 #import "SDRefresh.h"
 #import "BCNetwork.h"
-@interface LibraryController ()
+@interface LibraryController ()<LibraryDelegate>
 @property (nonatomic,retain)NSArray *bookArray;
 @property (nonatomic, weak) SDRefreshFooterView *refreshFooter;
 @property (nonatomic, weak) SDRefreshHeaderView *refreshHeader;
@@ -20,10 +21,7 @@
 static int page=6;
 @implementation LibraryController
 -(void)viewWillAppear:(BOOL)animated{
-    //下拉刷新
-    [self pullRefresh];
-    //上拉加载
-    [self setupFooter];
+
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,6 +32,10 @@ static int page=6;
     //注册
     [self.collectionView registerClass:[LibraryViewCell class] forCellWithReuseIdentifier:@"LibraryViewCell"];
     [self getData];
+    //下拉刷新
+    [self pullRefresh];
+    //上拉加载
+    [self setupFooter];
 }
 
 //下拉刷新
@@ -41,7 +43,6 @@ static int page=6;
     SDRefreshHeaderView *refreshHeader = [SDRefreshHeaderView refreshView];
     // 默认是在navigationController环境下，如果不是在此环境下，请设置 refreshHeader.isEffectedByNavigationController = NO;
     [refreshHeader addToScrollView:self.collectionView];
-   // NSString *pageIndex=[NSString stringWithFormat:@"%i",page];
     __weak SDRefreshHeaderView *weakRefreshHeader = refreshHeader;
     refreshHeader.beginRefreshingOperation = ^{
         //调用评论接口
@@ -66,7 +67,9 @@ static int page=6;
     [refreshFooter addTarget:self refreshAction:@selector(pushRefresh)];
     _refreshFooter = refreshFooter;
 }
-//上拉加载
+/**
+ *  上拉加载
+ */
 -(void)pushRefresh{
     page=page+6;
     NSString *pageIndex=[NSString stringWithFormat:@"%i",page];
@@ -81,7 +84,9 @@ static int page=6;
     }];
 }
 
-//请求数据
+/**
+ *  请求数据
+ */
 -(void)getData{
     //调用评论接口
     NSDictionary *param=[NSDictionary dictionaryWithObjectsAndKeys:@"6",@"pageSize",@"1",@"pageIndex",@"1",@"book_team", nil];
@@ -94,12 +99,27 @@ static int page=6;
     }];
 }
 
-//每个section的item个数
+/**
+ *  每个section的item个数
+ *
+ *  @param collectionView <#collectionView description#>
+ *  @param section        <#section description#>
+ *
+ *  @return <#return value description#>
+ */
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     return self.bookArray.count;
 }
 
+/**
+ *  设置单元内容
+ *
+ *  @param collectionView <#collectionView description#>
+ *  @param indexPath      <#indexPath description#>
+ *
+ *  @return <#return value description#>
+ */
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     LibraryViewCell *cell = (LibraryViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"LibraryViewCell" forIndexPath:indexPath];
@@ -107,7 +127,18 @@ static int page=6;
     [cell.bookImage sd_setImageWithURL:self.bookArray[indexPath.row][@"result"][@"book_img_url"]];
     //获取标题
     cell.titleLabel.text=self.bookArray[indexPath.row][@"result"][@"book_name"];
+    //获取图书id
+    cell.bookid=self.bookArray[indexPath.row][@"result"][@"book_id"];
+    cell.delegate=self;
     return cell;
 }
-
+#pragma mark -- 实现点击跳转代理事件
+-(void)btnClick:(UICollectionViewCell *)cell andBookId:(NSString *)bookid{
+    //设置故事板为第一启动
+    UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    DetailController *detail=[storyboard instantiateViewControllerWithIdentifier:@"DetailView"];
+    detail.bookid=bookid;
+    [self.navigationController pushViewController:detail animated:YES];
+    NSLog(@"图书：%@",bookid);
+}
 @end

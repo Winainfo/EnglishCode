@@ -7,7 +7,6 @@
 //
 
 #import "LibraryViewCell.h"
-
 @implementation LibraryViewCell
 
 - (void)awakeFromNib {
@@ -38,4 +37,9 @@
     }
     return self;
 }
+- (IBAction)clickBtn:(UIButton *)sender {
+    //调用代理
+    [self.delegate btnClick:self andBookId:_bookid];
+}
+
 @end
