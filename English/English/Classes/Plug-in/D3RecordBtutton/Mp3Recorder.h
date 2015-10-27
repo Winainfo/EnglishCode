@@ -24,5 +24,7 @@
 - (void)startRecord;
 - (void)stopRecord;
 - (void)cancelRecord;
+//音频路径
+- (NSString *)mp3Path;
 
 @end

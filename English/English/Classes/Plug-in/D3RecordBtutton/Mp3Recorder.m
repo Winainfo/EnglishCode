@@ -29,9 +29,11 @@
 
 - (void)setRecorder
 {
+    
     _recorder = nil;
     NSError *recorderSetupError = nil;
     NSURL *url = [NSURL fileURLWithPath:[self cafPath]];
+    //NSLog(@"---路径-----%@",url);
     NSMutableDictionary *settings = [[NSMutableDictionary alloc] init];
     //录音格式 无法使用
     [settings setValue :[NSNumber numberWithInt:kAudioFormatLinearPCM] forKey: AVFormatIDKey];
@@ -217,7 +219,16 @@
 
 - (NSString *)mp3Path
 {
-    NSString *mp3Path = [NSTemporaryDirectory() stringByAppendingPathComponent:@"mp3.caf"];
+    /**生成时间戳*/
+    NSDate *localDate = [NSDate date]; //获取当前时间
+    NSString *timeSp = [NSString stringWithFormat:@"%ld", (long)[localDate timeIntervalSince1970]]; //转化为UNIX时间戳
+//    NSLog(@"timeSp:%@",timeSp); //时间戳的值
+    
+//    NSDate *confromTimesp = [NSDate dateWithTimeIntervalSince1970:timeSp.intValue];//转换成标准时间
+//    NSLog(@"%d  = %@",timeSp.intValue,confromTimesp);
+//    NSString *mp3Path = [NSTemporaryDirectory() stringByAppendingPathComponent:@"mp3.caf"];
+    NSString *mp3Path =[NSTemporaryDirectory() stringByAppendingString:[NSString stringWithFormat:@"%@.mp3",timeSp]];
+//    NSLog(@"------%@---",mp3Path);
     return mp3Path;
 }
 

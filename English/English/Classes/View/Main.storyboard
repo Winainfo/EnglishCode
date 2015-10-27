@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15B17c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ty6-cE-qn3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15B22c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ty6-cE-qn3">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
@@ -150,7 +150,7 @@
                                     <action selector="playClick:" destination="7GL-Zv-3Ha" eventType="touchUpInside" id="8bX-lN-cYi"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gr6-gI-1nv">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gr6-gI-1nv" customClass="D3RecordButton">
                                 <rect key="frame" x="68" y="380" width="71" height="71"/>
                                 <animations/>
                                 <constraints>
@@ -158,6 +158,10 @@
                                     <constraint firstAttribute="height" constant="71" id="W3X-lF-BYn"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="ly"/>
+                                <connections>
+                                    <action selector="btnDown:" destination="7GL-Zv-3Ha" eventType="touchDown" id="pws-V9-jfF"/>
+                                    <action selector="btnUp:" destination="7GL-Zv-3Ha" eventType="touchUpInside" id="ebI-rb-Wsb"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bWa-Dc-Hmo">
                                 <rect key="frame" x="181" y="380" width="71" height="71"/>
@@ -167,6 +171,45 @@
                                     <constraint firstAttribute="height" constant="71" id="WVV-Lg-SfE"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="bf_no"/>
+                                <connections>
+                                    <action selector="playRecord:" destination="7GL-Zv-3Ha" eventType="touchUpInside" id="bvb-dB-94c"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zkU-fr-jmA" userLabel="EndPlay">
+                                <rect key="frame" x="181" y="380" width="71" height="71"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="71" id="1j8-gU-wSN"/>
+                                    <constraint firstAttribute="width" constant="71" id="bTl-HS-8nh"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="end"/>
+                                <connections>
+                                    <action selector="endPlayRecord:" destination="7GL-Zv-3Ha" eventType="touchUpInside" id="z5c-uG-3Q0"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="87e-pF-EKX" userLabel="NetEndPlay">
+                                <rect key="frame" x="181" y="380" width="71" height="71"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="71" id="Mcp-NL-nXo"/>
+                                    <constraint firstAttribute="width" constant="71" id="eL7-vl-9YN"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="end"/>
+                                <connections>
+                                    <action selector="endPlayNetRecord:" destination="7GL-Zv-3Ha" eventType="touchUpInside" id="cef-7I-tP0"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZGU-iv-NEk" userLabel="NetPlayBtn">
+                                <rect key="frame" x="181" y="380" width="71" height="71"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="71" id="Tuy-AT-Ile"/>
+                                    <constraint firstAttribute="height" constant="71" id="fCI-wA-hkK"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="bf"/>
+                                <connections>
+                                    <action selector="playNetRecord:" destination="7GL-Zv-3Ha" eventType="touchUpInside" id="Pjl-Sz-zBd"/>
+                                </connections>
                             </button>
                         </subviews>
                         <animations/>
@@ -176,10 +219,16 @@
                             <constraint firstItem="gr6-gI-1nv" firstAttribute="top" secondItem="UqL-5a-XDv" secondAttribute="bottom" constant="56" id="1d1-nb-7gY"/>
                             <constraint firstItem="gr6-gI-1nv" firstAttribute="leading" secondItem="pdV-Oo-mg7" secondAttribute="leading" constant="68" id="4s5-ml-2w6"/>
                             <constraint firstItem="CkZ-Cv-8K4" firstAttribute="leading" secondItem="UqL-5a-XDv" secondAttribute="trailing" constant="10" id="53U-dN-z3z"/>
+                            <constraint firstAttribute="trailing" secondItem="87e-pF-EKX" secondAttribute="trailing" constant="68" id="7oq-9w-GdE"/>
+                            <constraint firstItem="ZGU-iv-NEk" firstAttribute="top" secondItem="CkZ-Cv-8K4" secondAttribute="bottom" constant="59" id="B2X-rf-9B1"/>
+                            <constraint firstAttribute="trailing" secondItem="ZGU-iv-NEk" secondAttribute="trailing" constant="68" id="EpL-VY-np8"/>
                             <constraint firstItem="UqL-5a-XDv" firstAttribute="top" secondItem="LNi-T2-NKT" secondAttribute="bottom" constant="20" id="Fvj-e0-Le4"/>
+                            <constraint firstItem="zkU-fr-jmA" firstAttribute="top" secondItem="CkZ-Cv-8K4" secondAttribute="bottom" constant="59" id="J16-o7-195"/>
                             <constraint firstAttribute="trailing" secondItem="bWa-Dc-Hmo" secondAttribute="trailing" constant="68" id="QKn-R3-sgy"/>
                             <constraint firstItem="CkZ-Cv-8K4" firstAttribute="leading" secondItem="UqL-5a-XDv" secondAttribute="trailing" constant="10" id="VfL-LS-YDQ"/>
+                            <constraint firstAttribute="trailing" secondItem="zkU-fr-jmA" secondAttribute="trailing" constant="68" id="a3p-wP-6ra"/>
                             <constraint firstItem="UqL-5a-XDv" firstAttribute="leading" secondItem="pdV-Oo-mg7" secondAttribute="leading" constant="10" id="fze-m5-hvq"/>
+                            <constraint firstItem="87e-pF-EKX" firstAttribute="top" secondItem="CkZ-Cv-8K4" secondAttribute="bottom" constant="59" id="hVV-5o-TRr"/>
                             <constraint firstAttribute="trailing" secondItem="LNi-T2-NKT" secondAttribute="trailing" constant="10" id="l30-xt-sI0"/>
                             <constraint firstItem="LNi-T2-NKT" firstAttribute="centerX" secondItem="pdV-Oo-mg7" secondAttribute="centerX" id="qKX-kr-ljI"/>
                             <constraint firstItem="CkZ-Cv-8K4" firstAttribute="top" secondItem="LNi-T2-NKT" secondAttribute="bottom" constant="20" id="sgQ-ct-E3K"/>
@@ -191,7 +240,12 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="ContentLabel" destination="UqL-5a-XDv" id="zYq-vi-Lo1"/>
+                        <outlet property="NetEndBtn" destination="87e-pF-EKX" id="chz-EN-RVV"/>
+                        <outlet property="NetPlayBtn" destination="ZGU-iv-NEk" id="5jB-aj-JKf"/>
                         <outlet property="bookImage" destination="KnO-Tx-2ZO" id="0nX-Ih-Mp5"/>
+                        <outlet property="endPlay" destination="zkU-fr-jmA" id="uVD-6j-GMR"/>
+                        <outlet property="playRecordBtn" destination="bWa-Dc-Hmo" id="yTy-dQ-dzg"/>
+                        <outlet property="recordBtn" destination="gr6-gI-1nv" id="Txi-Mo-Q20"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XrN-Ga-r0P" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -312,7 +366,7 @@
         <scene sceneID="0iV-mJ-nIN">
             <objects>
                 <navigationController title="排行榜" automaticallyAdjustsScrollViewInsets="NO" id="dKu-eO-vyK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="排行榜" image="v3_tabbar_bookstore" id="4RU-hA-Nh9"/>
+                    <tabBarItem key="tabBarItem" title="排行榜" image="排行榜块" id="4RU-hA-Nh9"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1rG-Y0-aJP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -333,7 +387,7 @@
         <scene sceneID="dg1-Qb-X1g">
             <objects>
                 <navigationController title="图书馆" automaticallyAdjustsScrollViewInsets="NO" id="yMh-Es-Ypj" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="图书馆" image="v3_tabbar_shelf" id="1E1-q5-idp"/>
+                    <tabBarItem key="tabBarItem" title="图书馆" image="图书馆块" id="1E1-q5-idp"/>
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kir-Vn-Vsy">
@@ -379,7 +433,7 @@
         <scene sceneID="tSH-BY-1U4">
             <objects>
                 <navigationController title="我" automaticallyAdjustsScrollViewInsets="NO" id="nD6-gK-vWz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="我" image="v3_tabbar_personal" id="ojs-hK-Z9I"/>
+                    <tabBarItem key="tabBarItem" title="我" image="我块" id="ojs-hK-Z9I"/>
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="UZe-Sx-b18">
@@ -421,16 +475,18 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bf" width="88" height="88"/>
         <image name="bf_no" width="88" height="88"/>
         <image name="bookbg" width="480" height="475"/>
+        <image name="end" width="88" height="88"/>
         <image name="i" width="121" height="121"/>
         <image name="laba" width="32" height="23"/>
         <image name="lianxi" width="170" height="170"/>
         <image name="ly" width="88" height="88"/>
-        <image name="v3_tabbar_bookstore" width="26" height="26"/>
-        <image name="v3_tabbar_personal" width="26" height="26"/>
-        <image name="v3_tabbar_shelf" width="40" height="29"/>
         <image name="wooyou" width="170" height="170"/>
-        <image name="首页block" width="50" height="46"/>
+        <image name="图书馆块" width="30" height="30"/>
+        <image name="我块" width="30" height="30"/>
+        <image name="排行榜块" width="30" height="30"/>
+        <image name="首页block" width="30" height="30"/>
     </resources>
 </document>

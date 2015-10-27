@@ -37,9 +37,12 @@
 }
 
 //正常停止录音，开始转换数据
--(void)stopRecord{
+-(NSString *)stopRecord{
     [mp3 stopRecord];
     [RecordHUD dismiss];
+//    NSLog(@"---路径:%@",[mp3 mp3Path]);
+   NSString *path=[mp3 mp3Path];
+    return path;
 }
 
 //取消录音

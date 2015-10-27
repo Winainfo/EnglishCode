@@ -30,7 +30,7 @@
 - (void)initRecord:(id<D3RecordDelegate>)delegate maxtime:(int)_maxTime title:(NSString*)title;
 - (void)initRecord:(id<D3RecordDelegate>)delegate maxtime:(int)_maxTime;
 - (void)startRecord;
-- (void)stopRecord;
+- (NSString *)stopRecord;
 - (void)cancelRecord;
 
 @end

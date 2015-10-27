@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface DetailController : UIViewController
+#import "D3RecordButton.h"
+#import "Mp3Recorder.h"
+@interface DetailController : UIViewController<D3RecordDelegate>{
+    AVAudioPlayer *play;
+    Mp3Recorder *mp3;
+}
 @property (retain,nonatomic)NSString *bookid;
 @end
